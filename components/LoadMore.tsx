@@ -51,9 +51,9 @@ const LoadMore = () => {
           {inView && isLoading && (
             <Image
               src="./spinner.svg"
-              alt="spinner"
-              width={56}
-              height={56}
+              alt="Loading..."
+              width={20}
+              height={20}
               className="object-contain"
             />
           )}
