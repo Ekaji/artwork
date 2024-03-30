@@ -10,7 +10,7 @@ async function Page({ params }: { params: { id: string } }) {
 
   return (
     <section className=" flex flex-col justify-center items-center">
-      <div className="w-10/12 flex flex-col pb-12">
+      <div className="w-10/12 flex flex-col pb-">
         <div className="w-full flex justify-between my-5 space-x-5">
           <h2 className='text-3xl font-semibold w-4/12 flex flex-col justify-end'>
             {data.title}
