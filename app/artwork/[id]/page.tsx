@@ -1,21 +1,21 @@
 /* eslint-disable @next/next/no-img-element */
-import { fetchArtDetailById } from '../action'
+import { fetchArtDetailById } from '../action';
 import Image from "next/image";
 
-async function Page({ params }: { params: { id: string } }) {
-
-  const id = parseInt( params.id )
-
-  const data = await fetchArtDetailById(id)
+function Page({ params }) {
+  const id = parseInt(params.id);
+  const data = fetchArtDetailById(id);
 
   return (
-    <section className=" flex flex-col justify-center items-center">
+    <section className="flex flex-col justify-center items-center">
       <div className="w-10/12 flex flex-col pb-12">
         <div className="w-full flex justify-between my-5 space-x-5">
-          <h2 className='text-3xl font-semibold w-4/12 flex flex-col justify-end'>
+          <h2 className="text-3xl font-semibold w-4/12 flex flex-col justify-end">
             {data.title}
           </h2>
-          <p className='flex flex-col justify-end w-6/12'>
+          <p
+            className={`flex flex-col justify-end w-6/12 description`}
+          >
             {data.description ? data.description : 'No Description'}
           </p>
         </div>
@@ -23,12 +23,15 @@ async function Page({ params }: { params: { id: string } }) {
           <img
             src={`https://www.artic.edu/iiif/2/${data.image_id}/full/843,/0/default.jpg`}
             className="w-full object-cover"
-            alt={`${data.title}`}
+            alt={data.title}
           />
         </div>
+        <a href={`#description`} className="read-more">
+          Read More
+        </a>
       </div>
     </section>
-  )
+  );
 }
 
-export default Page
+export default Page;
