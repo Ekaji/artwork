@@ -7,7 +7,7 @@ export async function fetchArtDetails(page: number) {
     `https://api.artic.edu/api/v1/artworks?limit=${LIMIT}&page=${page}`
   );
 
-  const { data } = await response.json();
+  const data  = await response.json();
 
   return data;
 }

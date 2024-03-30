@@ -5,7 +5,8 @@ import ArtCard, {ArtCardProps} from "@/components/ArtCard";
 import LoadMore from "@/components/LoadMore";
 
 async function Home() {
-  const data = await fetchArtDetails(1)
+  const response = await fetchArtDetails(1)
+  const data = response.data
   return (
     <main>
       <HeroSection />
