@@ -10,7 +10,9 @@ import { fetchArtDetails } from "@/app/action";
 let page = 2;
 
 const LoadMore = () => {
-  const { ref, inView } = useInView();
+  const { ref, inView } = useInView({
+    rootMargin: '700px'
+  });
 
   const [data, setData] = useState<ArtCardProps[]>([]);
   const [isLoading, setIsLoading] = useState(true);
